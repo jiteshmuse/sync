@@ -34,6 +34,7 @@ setUsernameButton.addEventListener('click', () => {
     if (username) {
         usernameInput.value = ''; // Clear the input field
         chatSection.classList.remove('hidden'); // Show chat section
+        document.getElementById('username-section').style.display = 'none'; // Hide username input section
         loadChatMessages(); // Load existing messages
     } else {
         alert('Please enter a valid name!');
