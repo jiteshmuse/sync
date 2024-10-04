@@ -33,6 +33,7 @@ setUsernameButton.addEventListener('click', () => {
     username = usernameInput.value.trim();
     if (username) {
         usernameInput.value = ''; // Clear the input field
+        document.getElementById('username-section').classList.add('hidden'); // Hide name input section
         chatSection.classList.remove('hidden'); // Show chat section
         loadChatMessages(); // Load existing messages
     } else {
@@ -77,14 +78,6 @@ sendMessageButton.addEventListener('click', sendMessage);
 messageInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent form submission if within a form
-        sendMessage();
-    }
-});
-
-// Event listener for mobile virtual keyboard send button
-messageInput.addEventListener('input', (event) => {
-    const messageText = messageInput.value.trim();
-    if (event.inputType === 'insertText' && messageText) {
         sendMessage();
     }
 });
