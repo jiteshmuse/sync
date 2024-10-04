@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Chat App</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js" defer></script> <!-- Ensure the script runs after the DOM is loaded -->
+    <title>Chat App</title>
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div id="username-section">
-            <h1>Enter Your Name</h1>
-            <input type="text" id="username" placeholder="Your name" required>
-            <button id="set-username">Join Chat</button>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>World Chat Room</h2>
         </div>
-
-        <div id="chat-section" class="hidden">
-            <h1>Chat Room</h1>
-            <ul id="chat-messages"></ul>
-            <input type="text" id="message" placeholder="Type your message here...">
-            <button id="send-message">Send</button>
+        <div id="login-container" class="login-container">
+            <input type="text" id="username-input" placeholder="Enter your name">
+            <button id="login-button">Join Chat</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input" id="chat-input" style="display: none;">
+            <input type="text" placeholder="Type a message..." id="message-input">
+            <button id="send-button">Send</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
