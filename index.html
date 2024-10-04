@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Chat App</title>
+    <title>World Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js" defer></script>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h2>Chat Room</h2>
+    <div class="container">
+        <div id="username-section">
+            <h1>Enter Your Name</h1>
+            <input type="text" id="username" placeholder="Your name" required>
+            <button id="set-username">Join Chat</button>
         </div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="message sent">
-                <p>Hello! How are you?</p>
-                <span class="timestamp">10:00 AM</span>
-            </div>
-            <div class="message received">
-                <p>I'm good, thanks! And you?</p>
-                <span class="timestamp">10:01 AM</span>
-            </div>
-        </div>
-        <div class="chat-input">
-            <input type="text" placeholder="Type a message..." id="message-input">
-            <button id="send-button">Send</button>
+
+        <div id="chat-section" class="hidden">
+            <h1>Chat Room</h1>
+            <ul id="chat-messages"></ul>
+            <input type="text" id="message" placeholder="Type your message here...">
+            <button id="send-message">Send</button>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
