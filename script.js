@@ -34,7 +34,6 @@ setUsernameButton.addEventListener('click', () => {
     if (username) {
         usernameInput.value = ''; // Clear the input field
         chatSection.classList.remove('hidden'); // Show chat section
-        document.getElementById('username-section').style.display = 'none'; // Hide username input section
         loadChatMessages(); // Load existing messages
     } else {
         alert('Please enter a valid name!');
@@ -71,13 +70,21 @@ const sendMessage = () => {
     }
 };
 
-// Event listener for sending a message
+// Event listener for sending a message on button click
 sendMessageButton.addEventListener('click', sendMessage);
 
 // Event listener for pressing "Enter" key
 messageInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent form submission if within a form
+        sendMessage();
+    }
+});
+
+// Event listener for mobile virtual keyboard send button
+messageInput.addEventListener('input', (event) => {
+    const messageText = messageInput.value.trim();
+    if (event.inputType === 'insertText' && messageText) {
         sendMessage();
     }
 });
